@@ -1,11 +1,15 @@
-## Task1.Part1
+[Task1.Par1](./readme.md#task1part1)
+[Task1.Par1](./readme.md#task1part2)
+### Task1.Part1
 
 * **passwd** command changes **etc/shadow** file after execution
 * To list users that are logged in and process they're running we can use **w**. Additionally, we can check for how long system is running, system load averages.
 To check all users/daemons registered in the system we can use **cat /etc/passwd** command. 
 To check command used by a user we can check **~/.bash_history** file.
 * **w user <user>** will show information about specified user. Might be useful to keep more readable output if there are lots of users on system.
-**passwd -d <user>** will delete password for a user. Might be useful if a user forgot his password. 
+**passwd -d <user>** will delete password for a user. Might be useful if a user forgot his password.
+
+<img src="./Screenshots/Screenshot%20from%202022-07-11%2021-57-37.png width=200 height=400>
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-11%2021-57-37.png)
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-11%2021-58-25.png)
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-11%2022-00-08.png)
@@ -14,9 +18,9 @@ To check command used by a user we can check **~/.bash_history** file.
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-11%2022-30-18.png)
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-11%2022-34-54.png)
 
-## Task1.Part2
-
-* **tree** command execution results
+### Task1.Part2
+1. **tree** command execution results
+![screenshot](https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task1/Screenshots/Screenshot%20from%202022-07-12%2013-35-40.png =250x250)
 * **file** command can be used to check file type
 * To return to the home directory from any part of the system we can execute **cd ~**
 * **ls** command with **-l** switch will show us expanded information of the files and directories: file type, file permissions, file owner, file group, file size, date and time. **ls** command with **-a** switch will show us all files included hidden.
