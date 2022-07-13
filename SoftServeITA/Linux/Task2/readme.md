@@ -78,6 +78,7 @@ which the file belongs.
 user running it belongs to, that user is an outsider.
  
 14. To change owner of a file or directory we can use **chown <newowner> <file or directory>**. To change access mode we can use **chmod u(g,o,a)+r(w,x,t) <filename>** or **chmod 777 <filename>** (wiil provide all access rights for all users). 
+
 ![screenshot](./Screenshots/Screenshot%20from%202022-07-13%2015-06-15.png)
 
 15. Octal representation of permissions is numeric representation of a permission. For example 666 will provide read and write access rights to owner, group and other users. 
