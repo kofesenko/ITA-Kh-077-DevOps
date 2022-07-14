@@ -1,14 +1,13 @@
-###Task3.Part1
+### Task3.Part1
 
 1. The process in Linux can have two main states: **foreground** and background.
 2. 
-<img src="./Screenshots/[to be replaced]" width=100% height=100%>
-
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%20from%202022-07-14%2011-23-29.png" width=70% height=70%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%20from%202022-07-14%2011-24-34.png" width=70% height=70%>
 3. Proc file system is virtual file system creadted when system boots and dissolved when system shut down. It contains information about the processes that are running and it works like control and information center for kernel. It also provides communication medium between kernel and user space. Additionaly it **/proc** includes a directory for each running process.
 4. To print information about CPU we can use **cat /proc/cpuinfo** or **lscpu** commands.
 5. 
-
-<img src="./Screenshots/[to be replaced]" width=100% height=100%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%20from%202022-07-14%2011-57-27.png" width=70% height=70%>
 
 6. Kernel processes have a name that is between square brackets. 
 
@@ -23,7 +22,7 @@
               * X    dead (should never be seen)
               * Z    defunct ("zombie") process, terminated but not reaped by its parent
  
-<img src="./Screenshots/[to be replaced]" width=100% height=100%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%20from%202022-07-14%2013-07-48.png" width=70% height=70%>
 
 8. To list processes for specific user we can use **ps -u <username>** command. To have extended view on the processes we can add *ax* swithces to mentioned command.
 
@@ -70,9 +69,22 @@ For example, we can use **k** to kill a process or **r** to change a priority or
  * **bg** - resumes suspended jobs in the current environment by running them as background jobs.
  * **fg** - place job in the foreground, and make it the current job using fg command.
 
-###Task3.Part2
+### Task3.Part2
 
 1. 
-<img src="./Screenshots/[to be replaced]" width=100% height=100%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20141315.png" width=70% height=70%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20153253.png" width=70% height=70%>
 
-2. 
+2. To increase SSH security connection we can set **PasswordAuthentication** to no in /etc/ssh/sshd_config file. But before it we should copy our public ssh key to ~/.ssh/authorized_keys file.
+3. We can set up different encryption methods and complexity while generating ssh keys.
+ECDSA
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20144128.png" width=70% height=70%>
+ED25519
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20144555.png" width=70% height=70%>
+RSA
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20144153.png" width=70% height=70%>
+4. For some reason we still have SSH access to virtual machine under NAT usnig VMWare Workstation. 
+5. After analyzing captured traffic we can say that ssh conenction type is the most secure since we can see only encrypted credentials. 
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-16.png" width=70% height=70%>
+<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Linux/Task3/Screenshots/Screenshot%202022-07-14%20162535.png" width=70% height=70%>
+
