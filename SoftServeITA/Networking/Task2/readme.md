@@ -9,7 +9,7 @@
         * setting ip address 192.168.1.1
         * setting netmask 255.255.255.0 
         
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/Screenshot-2022-07-18-114243.png" width=70% height=70%>
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task2/Screenshots/Screenshot-2022-07-18-114243.png" width=70% height=70%>
 
 2. ISC-DHSPSERVER server option:
     * /etc/network/interfaces
@@ -28,7 +28,7 @@
     * /etc/default/isc-dhcp-server - set up default interface to *eth1*
     * Restart server - **sudo /etc/init.d/isc-dhcp-server restart**
 
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/Screenshot-2022-07-18-133049.png" width=70% height=70%>
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task2/Screenshots/Screenshot-2022-07-18-133049.png" width=70% height=70%>
 
 3. To configure DNS we can do the following:
     * /etc/dhcp/dhcpd.conf
