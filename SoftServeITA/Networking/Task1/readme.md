@@ -63,13 +63,13 @@
     Now we have configured internal interface (eth0)
 
 5. Routing table on VM2:
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_21_08_18.png" width=100% height=100%>
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_21_08_18.png" width=70% height=70%>
 6. Checking connection:
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_53_44.png" width=100% height=100%>
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_53_44.png" width=70% height=70%>
 7. To determine wich resource has an IP address 8.8.8.8 we can use **nslookup 8.8.8.8** or **host 8.8.8.8** commands.
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_58_45.png" width=100% height=100%>
-8. To check, wich IP address belongs to epam.com we can use **nslookup epam.com**, **dig epam.com** or **host epam.com** commands. 
-    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_59_45.png" width=100% height=100%>
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_58_45.png" width=70% height=70%>
+8. To check, which IP address belongs to epam.com we can use **nslookup epam.com**, **dig epam.com** or **host epam.com** commands. 
+    <img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Networking/Task1/Screenshots/VirtualBox_UbuntuVM2_15_07_2022_20_59_45.png" width=70% height=70%>
 9. On Windows machine which is host we can check default gateway using command **ipconfig /all**. To see routing tables we can use **arp -a** or **route PRINT** commands. 
 
 10. After execution traceroute command:
