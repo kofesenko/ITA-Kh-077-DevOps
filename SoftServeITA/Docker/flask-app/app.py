@@ -3,18 +3,18 @@ import random
 app = Flask(__name__)
 # list of cat images
 images = [
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26390-1381844163-18.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-1376-1381846217-0.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3391-1381844336-26.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-29111-1381845968-0.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3409-1381844582-13.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr02/15/9/anigif_enhanced-buzz-19667-1381844937-10.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26358-1381845043-13.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-18774-1381844645-6.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-25158-1381844793-0.gif",
-"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
+"https://executiveponies.files.wordpress.com/2017/03/thriller-cat-edition.gif?w=516&h=413",
+"https://executiveponies.files.wordpress.com/2017/03/where-my-phone-where.gif?w=538",
+"https://executiveponies.files.wordpress.com/2017/03/whatheckyoudoing.gif?w=500",
+"https://executiveponies.files.wordpress.com/2017/03/sooo-bored.gif?w=511",
+"https://executiveponies.files.wordpress.com/2017/03/someone-trouble.gif?w=513&h=302",
+"https://executiveponies.files.wordpress.com/2017/03/rs_500x250-140630102259-tumblr_inline_msmeewgqs31qz4rgp.gif?w=500",
+"https://executiveponies.files.wordpress.com/2017/03/cat_water_drip.gif?w=486",
+"https://executiveponies.files.wordpress.com/2017/03/cat-box-runway-model.gif?w=500",
+"https://executiveponies.files.wordpress.com/2017/03/cat-slots.gif?w=503",
+"https://executiveponies.files.wordpress.com/2017/03/funny-cat-gifs13.gif?w=479",
+"https://executiveponies.files.wordpress.com/2017/03/funny-cat-gifs6.gif?w=500",
+"https://executiveponies.files.wordpress.com/2017/03/kittens-look.gif?w=1000?w=499"
 ]
 @app.route('/')
 def index():
