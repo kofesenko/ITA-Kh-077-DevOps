@@ -1,65 +1,27 @@
-import sqlite3
-import base64
-import configparser
-
-import requests
-from flask import Flask, g, render_template, abort
-
-import database
-
-config = configparser.ConfigParser()
-config.read('config.ini')
-DATABASE_PATH = config.get('DATABASE', 'PATH')
-
-
+from flask import Flask, render_template
+import random
 app = Flask(__name__)
-
-
-def get_db():
-    db = getattr(g, '_database', None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE_PATH)
-    return db
-
-
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, '_database', None)
-    if db is not None:
-        db.close()
-
-
+# list of cat images
+images = [
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26388-1381844103-11.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr01/15/9/anigif_enhanced-buzz-31540-1381844535-8.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26390-1381844163-18.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-1376-1381846217-0.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3391-1381844336-26.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/10/anigif_enhanced-buzz-29111-1381845968-0.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/9/anigif_enhanced-buzz-3409-1381844582-13.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr02/15/9/anigif_enhanced-buzz-19667-1381844937-10.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr05/15/9/anigif_enhanced-buzz-26358-1381845043-13.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-18774-1381844645-6.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr06/15/9/anigif_enhanced-buzz-25158-1381844793-0.gif",
+"http://ak-hdl.buzzfed.com/static/2013-10/enhanced/webdr03/15/10/anigif_enhanced-buzz-11980-1381846269-1.gif"
+]
 @app.route('/')
-def index_cat():
-    # TODO return cat picture and id
-    get_picture = requests.get('https://api.thecatapi.com/v1/images/search')  # Get picture
-    url_pic = get_picture.json()[0]["url"]  # Get picture url from json
-    id_pic = get_picture.json()[0]["id"]  # Get picture id from json
-    base64_pic = base64.b64encode(requests.get(url_pic).content).decode("UTF-8")
-
-    cur = get_db().cursor()  # Connect to db
-    database.add_cat_to_bd(base64_pic, id_pic, cur)  # Add new record to db
-    get_db().commit()  # Commit changes
-    return render_template('index.html', data=base64_pic)
+def index():
+    url = random.choice(images)
+    return render_template('index.html', url=url)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
 
 
-@app.route('/<cat_id>/')
-def get_cat_by_id(cat_id):
-    # TODO return cat picture by id if exists
 
-    cur = get_db().cursor()
-    url = database.find_cat_id(cat_id, cur)  # Try to find cat_id in db
-    if url is None:
-        abort(404)  # If database doesn't have url return 404
-    else:
-        return render_template('index.html', data=url[0])
-
-
-@app.errorhandler(404)
-def not_found_error(error):
-    return render_template('error.html'), 404
-
-
-if __name__ == '__main__':
-    database.create_db()  # Will create database if not exists
-    app.run()
