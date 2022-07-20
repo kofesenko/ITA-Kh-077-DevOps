@@ -62,3 +62,13 @@
 	docker run -p 5000:5000 --name mycatapp kf/mycatapp
 	```
 
+5. To push our image to the registry(dockerhub):
+	```
+	#Login to the dockerhub
+	docker login
+	#Change dokcer image tag to the relevant 
+	docker tag kf/mycatapp kofesenko/mycatapp
+	#Push to registry
+	docker push
+	```
+
