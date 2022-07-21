@@ -61,6 +61,7 @@
 	```
 	docker run -p 5000:5000 --name mycatapp kf/mycatapp
 	```
+	<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Docker/Screenshots/Screenshot2022-07-21-104156.png" width=70% height=70%>
 
 5. To push our image to the registry(dockerhub):
 	```
@@ -71,4 +72,5 @@
 	#Push to registry
 	docker push
 	```
-
+	<img src="https://github.com/kofesenko/ITA-Kh-077-DevOps/blob/main/SoftServeITA/Docker/Screenshots/Screenshot2022-07-21104715.png" width=70% height=70%>
+	
