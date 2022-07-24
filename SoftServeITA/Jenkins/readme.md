@@ -27,7 +27,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 #Continue instalation and configure user
 ```
 
-2. Create deploy job which will deploy index.html page on another from jenkins server using secure copy:
+2. Create deploy job which will deploy index.html page on apache server from jenkins server using secure copy:
     * Set up second machine:
         ```
         #First we need to configure passwordless connection to this machine from our jenkins machine
@@ -94,7 +94,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
         debug1: Exit status 0
         Finished: SUCCESS
         ```
-3.  Create deploy job which will deploy index.html page on another from jenkins server using Publish Over SSH plugin:
+3.  Create deploy job which will deploy index.html page on apache server from jenkins server using Publish Over SSH plugin:
     * Install **Publish Over SSH** plugin
     * Configure plugin:
         * Add private key
@@ -151,4 +151,14 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
         SSH: Transferred 1 file(s)
         Finished: SUCCESS
         ```
-        
+4. Create deploy job which will deploy grabbed from github index.html page on apache server using jenkins server and Publish Over SSH plugin:    
+    * Set up SSH connection to GitHub from Jenkins (copy public key on GitHub and Private on Jenkins)
+    * In source code management configure Git
+    * In Build section configure Send Files or execute commands over SSH
+        * Source files **/*.html to grab only index.html file.
+   * Build
+5. Adjust deploy job which will deploy index.html page on webserver only when changes were commited to index.html
+    * In Build triggers section configure Poll SCM
+        ```
+        H/2 * * * *
+        ```
